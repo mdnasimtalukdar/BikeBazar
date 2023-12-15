@@ -796,6 +796,13 @@ html{
   pointer-events: none;
 }
 
+.btn-circle{
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
 :where(.btn:is(input[type="checkbox"])),
 :where(.btn:is(input[type="radio"])){
   width: auto;
@@ -808,6 +815,30 @@ html{
 .btn:is(input[type="radio"]):after{
   --tw-content: attr(aria-label);
   content: var(--tw-content);
+}
+
+.carousel{
+  display: inline-flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-item{
+  box-sizing: content-box;
+  display: flex;
+  flex: none;
+  scroll-snap-align: start;
+}
+
+.carousel-center .carousel-item{
+  scroll-snap-align: center;
+}
+
+.carousel-end .carousel-item{
+  scroll-snap-align: end;
 }
 
 .dropdown{
@@ -1082,18 +1113,8 @@ html{
   align-items: center;
 }
 
-.navbar-start{
-  width: 50%;
-  justify-content: flex-start;
-}
-
 .navbar-center{
   flex-shrink: 0;
-}
-
-.navbar-end{
-  width: 50%;
-  justify-content: flex-end;
 }
 
 .stat{
@@ -1193,6 +1214,10 @@ html{
   100%{
     transform: scale(1);
   }
+}
+
+.carousel::-webkit-scrollbar{
+  display: none;
 }
 
 @keyframes checkmark{
@@ -1379,6 +1404,34 @@ html{
   }
 }
 
+.btn-circle:where(.btn-xs){
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
+.btn-circle:where(.btn-sm){
+  height: 2rem;
+  width: 2rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
+.btn-circle:where(.btn-md){
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
+.btn-circle:where(.btn-lg){
+  height: 4rem;
+  width: 4rem;
+  border-radius: 9999px;
+  padding: 0px;
+}
+
 .menu-horizontal{
   display: inline-flex;
   flex-direction: row;
@@ -1429,12 +1482,36 @@ html{
   margin: 0 auto;
 }
 
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.left-5{
+  left: 1.25rem;
+}
+
+.right-5{
+  right: 1.25rem;
+}
+
+.top-1\/2{
+  top: 50%;
+}
+
 .z-\[1\]{
   z-index: 1;
 }
 
 .mt-3{
   margin-top: 0.75rem;
+}
+
+.flex{
+  display: flex;
 }
 
 .hidden{
@@ -1453,8 +1530,59 @@ html{
   width: 13rem;
 }
 
+.w-full{
+  width: 100%;
+}
+
+.flex-1{
+  flex: 1 1 0%;
+}
+
+.-translate-y-1\/2{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .cursor-pointer{
   cursor: pointer;
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.gap-10{
+  gap: 2.5rem;
+}
+
+.space-y-7 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
+}
+
+.self-center{
+  align-self: center;
+}
+
+.justify-self-center{
+  justify-self: center;
 }
 
 .rounded-box{
@@ -1470,6 +1598,10 @@ html{
   background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)));
 }
 
+.bg-bg{
+  background-color: rgba(231, 111, 81, 0.10);
+}
+
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: rgb(231 111 81 / var(--tw-bg-opacity));
@@ -1479,24 +1611,23 @@ html{
   padding: 0.5rem;
 }
 
+.p-24{
+  padding: 6rem;
+}
+
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
 
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.px-14{
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
-}
-
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .font-Montserrat{
@@ -1512,14 +1643,9 @@ html{
   line-height: 2.5rem;
 }
 
-.text-xl{
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-xs{
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .text-base{
@@ -1562,6 +1688,23 @@ html{
   scroll-behavior: smooth;
 }
 
+@media not all and (min-width: 1280px){
+  .max-xl\:text-center{
+    text-align: center;
+  }
+}
+
+@media not all and (min-width: 1024px){
+  .max-lg\:py-16{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .max-lg\:text-center{
+    text-align: center;
+  }
+}
+
 @media (min-width: 1024px){
   .lg\:flex{
     display: flex;
@@ -1571,7 +1714,11 @@ html{
     display: none;
   }
 
-  .lg\:justify-end{
-    justify-content: flex-end;
+  .lg\:flex-row{
+    flex-direction: row;
+  }
+
+  .lg\:p-24{
+    padding: 6rem;
   }
 }
