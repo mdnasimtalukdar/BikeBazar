@@ -741,6 +741,10 @@ html{
 }
 
 @media (hover:hover){
+  .link-hover:hover{
+    text-decoration-line: underline;
+  }
+
   .menu li > *:not(ul):not(.menu-title):not(details):active,
 .menu li > *:not(ul):not(.menu-title):not(details).active,
 .menu li > details > summary:active{
@@ -1140,6 +1144,15 @@ html{
   gap: 0.5rem;
 }
 
+.footer-center{
+  place-items: center;
+  text-align: center;
+}
+
+.footer-center > *{
+  place-items: center;
+}
+
 @media (min-width: 48rem){
   .footer{
     grid-auto-flow: column;
@@ -1200,6 +1213,10 @@ html{
 .link{
   cursor: pointer;
   text-decoration-line: underline;
+}
+
+.link-hover{
+  text-decoration-line: none;
 }
 
 .menu{
@@ -1573,6 +1590,13 @@ details.collapse summary::-webkit-details-marker{
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.footer-title{
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.6;
 }
 
 .input input:focus{
@@ -2066,6 +2090,10 @@ details.collapse summary::-webkit-details-marker{
   cursor: pointer;
 }
 
+.grid-flow-col{
+  grid-auto-flow: column;
+}
+
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -2114,6 +2142,10 @@ details.collapse summary::-webkit-details-marker{
   gap: 6rem;
 }
 
+.gap-4{
+  gap: 1rem;
+}
+
 .space-y-7 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
@@ -2138,12 +2170,20 @@ details.collapse summary::-webkit-details-marker{
   border-radius: 0.75rem;
 }
 
+.rounded{
+  border-radius: 0.25rem;
+}
+
 .border-2{
   border-width: 2px;
 }
 
 .border{
   border-width: 1px;
+}
+
+.border-t{
+  border-top-width: 1px;
 }
 
 .border-solid{
@@ -2157,6 +2197,11 @@ details.collapse summary::-webkit-details-marker{
 .border-primary{
   --tw-border-opacity: 1;
   border-color: rgb(231 111 81 / var(--tw-border-opacity));
+}
+
+.border-base-300{
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
 }
 
 .bg-base-100{
@@ -2178,6 +2223,15 @@ details.collapse summary::-webkit-details-marker{
   background-color: rgb(231 111 81 / var(--tw-bg-opacity));
 }
 
+.bg-black{
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.fill-current{
+  fill: currentColor;
+}
+
 .p-2{
   padding: 0.5rem;
 }
@@ -2188,6 +2242,10 @@ details.collapse summary::-webkit-details-marker{
 
 .p-0{
   padding: 0px;
+}
+
+.p-10{
+  padding: 2.5rem;
 }
 
 .px-1{
@@ -2343,6 +2401,15 @@ details.collapse summary::-webkit-details-marker{
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-base-content{
+  --tw-text-opacity: 1;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+}
+
+.text-opacity-0{
+  --tw-text-opacity: 0;
+}
+
 .shadow{
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -2428,6 +2495,14 @@ details.collapse summary::-webkit-details-marker{
 @media (min-width: 768px){
   .md\:flex-row{
     flex-direction: row;
+  }
+
+  .md\:place-self-center{
+    place-self: center;
+  }
+
+  .md\:justify-self-end{
+    justify-self: end;
   }
 
   .md\:px-10{
